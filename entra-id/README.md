@@ -27,7 +27,7 @@ Zapytanie generujące mapę z udanymi logowaniami (`ResultType == 0`), z geoloka
 ### ✔️ `EntraIDAuthenticationFailures.json`
 Mapa nieudanych logowań to samo co successfull login tylko, że nagtywne róznica ('ResultType>0'), pozwalająca wykrywać próby brute-force lub podejrzane lokalizacje.
 
-###✔️ `ImpossibleTravel.kql`
+### ✔️ `ImpossibleTravel.kql`
 Mapa niemożliwych do wykonania podróży, Impossible Travel nie patrzy na to, czy logowanie zakończyło się sukcesem, czy porażką.
 
 Liczy odległość geograficzną między kolejnymi logowaniami użytkownika.
