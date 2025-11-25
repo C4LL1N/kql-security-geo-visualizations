@@ -13,7 +13,7 @@ Celem jest szybka analiza bezpieczeństwa logowań oraz anomalii lokalizacyjnych
 
 ## 📌 Zawartość katalogu
 
-### ✔️ `successful-logins.kql`
+### ✔️ `successful-logins.json`
 Zapytanie generujące mapę z udanymi logowaniami (`ResultType == 0`), z geolokalizacją użytkowników:
 - latitude / longitude  
 - miasto  
@@ -21,7 +21,7 @@ Zapytanie generujące mapę z udanymi logowaniami (`ResultType == 0`), z geoloka
 - liczba logowań  
 - etykieta użytkownik → lokalizacja
 
-### ✔️ `failed-logins.kql`
+### ✔️ `failed-logins.json`
 Mapa nieudanych logowań to samo co successfull login tylko, że nagtywne róznica ('ResultType>0'), pozwalająca wykrywać próby brute-force lub podejrzane lokalizacje.
 ## 🎯 Cel
 
