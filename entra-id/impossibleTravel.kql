@@ -1,0 +1,25 @@
+// Impossible Travel – Entra ID
+let thresholdKm = 500;      // minimalna odległość między logowaniami w km
+let maxMinutes = 120;       // maksymalny czas między logowaniami w minutach
+SigninLogs
+| extend 
+    Latitude = todouble(LocationDetails["geoCoordinates"]["latitude"]),
+    Longitude = todouble(LocationDetails["geoCoordinates"]["longitude"]),
+    City = tostring(LocationDetails["city"]),
+    Country = tostring(LocationDetails["countryOrRegion"]),
+    User = tostring(Identity)
+| where isnotempty(Latitude) and isnotempty(Longitude)
+| order by User asc, TimeGenerated asc
+| extend 
+    PrevUser = prev(User),
+    PrevLat = prev(Latitude),
+    PrevLon = prev(Longitude),
+    PrevTime = prev(TimeGenerated)
+| where User == PrevUser
+| extend 
+    DistanceKm = geo_distance_2points(Latitude, Longitude, PrevLat, PrevLon) / 1000,
+    DurationMinutes = datetime_diff("minute", TimeGenerated, PrevTime)
+| where DistanceKm > thresholdKm and DurationMinutes < maxMinutes
+| summarize Events = count() by User, City, Country, Latitude, Longitude, DistanceKm
+| project User, City, Country, Latitude, Longitude, DistanceKm,
+          friendly_label = strcat(User, " - ", City, ", ", Country, " (", toint(DistanceKm), " km)")
