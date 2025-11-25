@@ -36,9 +36,10 @@ Celem zapytań jest:
 
 ## 🚀 Jak używać
 
-1. Skopiuj dowolne zapytanie `.kql`.
-2. Jeśli chcesz Sentinel Workbook Użyj JSON Format w opcji Advanced Editor, aby dostać mapkę.
-3. Otwórz **Log Analytics** lub **Sentinel Logs**.
-4. Wklej zapytanie i uruchom.
+1. Skopiuj dowolny `.json`.
+2. Sentinel Workbook Użyj JSON Format w opcji Advanced Editor, aby dostać mapkę.
+3. Możesz z póżniej skopiować `.kql`.
+4. Otwórz **Log Analytics** lub **Sentinel Logs**.
+5. Wklej zapytanie i uruchom.
 
 ---
