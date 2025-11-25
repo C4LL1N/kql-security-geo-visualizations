@@ -21,7 +21,7 @@ Zapytanie generujące mapę z udanymi logowaniami (`ResultType == 0`), z geoloka
 - liczba logowań  
 - etykieta użytkownik → lokalizacja
 
-### ✔️ `failed-logins.json`
+### ✔️ `EntraIDAuthenticationFailures.json`
 Mapa nieudanych logowań to samo co successfull login tylko, że nagtywne róznica ('ResultType>0'), pozwalająca wykrywać próby brute-force lub podejrzane lokalizacje.
 ## 🎯 Cel
 
